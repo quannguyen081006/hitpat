@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bị đánh chưa?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffd1dc;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #fff5f7;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      border: 5px solid #ffb6c1;
+      box-shadow: 0 5px 15px rgba(255, 182, 193, 0.3);
+    }
+
+    h1 {
+      color: #ff69b4;
+      margin-bottom: 20px;
+    }
+
+    img {
+      width: 250px;
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 12px 40px;
+      font-size: 18px;
+      font-weight: bold;
+      background-color: #ffb6c1;
+      border: 2px solid #ff69b4;
+      color: #d4365c;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    button:hover {
+      background-color: #ffc0cb;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Xin hãy trùng phạt me</h1>
+    <img id="mainImage" src="normal.png" alt="Ảnh ban đầu">
+    <br>
+    <button id="hitBtn">oánh 💢</button>
+  </div>
+
+  <script>
+    const image = document.getElementById("mainImage");
+    const hitBtn = document.getElementById("hitBtn");
+
+    let isHit = false;
+
+    hitBtn.addEventListener("click", () => {
+      if (!isHit) {
+        image.src = "hit.png"; // ảnh sau khi bị đánh
+        hitBtn.textContent = "im sogi 😭";
+        isHit = true;
+      } else {
+        image.src = "normal.png"; // quay lại ảnh ban đầu
+        hitBtn.textContent = "oánh 💢";
+        isHit = false;
+      }
+    });
+  </script>
+</body>
+</html>
+
